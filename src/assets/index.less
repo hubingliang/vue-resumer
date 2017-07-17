@@ -4,15 +4,51 @@ body{
         flex-direction: column;
         height: 100vh;
         .topbar {
+            box-shadow: 0 0 3px hsla(0,0,0,0.5);
         }
         main{
             display: flex;
             flex: 1;
+            padding: 20px;
             .editor{
-                width: 30vw;
+                box-shadow: 0 0 3px hsla(0,0,0,0.5);
+                width: 34em;
+                margin-right: 20px;
+                border-radius: 4px;
+                overflow: hidden;
+                display: flex;
+                nav{
+                    background: #333;
+                    width: 80px;
+                    .icon{
+                        width: 30px;
+                        height: 30px;
+                        margin: 20px;
+                        fill: white;
+                    }
+                    .active{
+                        background: white;
+                        .icon{
+                            fill: black;
+                        }
+                    }
+                }
+                .panes{
+                    flex: 1;
+                    li{
+                        display: none;
+                    }
+                    .active{
+                        display: block;
+                    }
+                }
+
             }
             .preview{
-                flex: 60vw;
+                border-radius: 4px;
+                box-shadow: 0 0 3px hsla(0,0,0,0.5);
+                flex: 1;
+                overflow: hidden;
             }
         }
     }

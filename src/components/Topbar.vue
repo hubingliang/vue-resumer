@@ -1,11 +1,11 @@
 <template>
     <div id="topbar">
       <div class="logo">
-          Vue-resumer
+          VueResumer
       </div>
       <div class="actions">
-        <el-button>默认按钮</el-button>
-        <el-button type="primary">主要按钮</el-button>
+        <el-button>登录</el-button>
+        <el-button type="primary">注册</el-button>
       </div>
     </div>
 </template>
@@ -14,12 +14,12 @@
 
 <style>
 #topbar {
-  color: red;
-  border: 1px solid red;
+  color: black;
   min-height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
+  font-size: 20px;
 }
 </style>
