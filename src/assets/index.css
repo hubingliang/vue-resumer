@@ -1,0 +1,15 @@
+body #app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+body #app main {
+  display: flex;
+  flex: 1;
+}
+body #app main .editor {
+  width: 30vw;
+}
+body #app main .preview {
+  flex: 60vw;
+}
