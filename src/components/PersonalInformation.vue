@@ -1,7 +1,7 @@
 <template>
     <div>
         <h2>个人信息</h2>
-        <el-form  :label-position="labelPosition" label-width="80px" :model="profile">
+        <el-form  :label-position="labelPosition" label-width="80px">
             <div class="form">
                 <el-form-item label="姓名">
                 <el-input v-model="profile.name"></el-input>

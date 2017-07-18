@@ -1,13 +1,10 @@
 <template>
     <div>
-        <h2>工作经历</h2>
+        <h2>{{title}}</h2>
         <el-form :label-position="labelPosition" label-width="80px" >
-            <div v-for="(work,index) in workExperience" class="form">
-                <el-form-item label="公司">
-                    <el-input v-model="work.name"></el-input>
-                </el-form-item>
-                <el-form-item label="工作经历">
-                    <el-input v-model="work.city"></el-input>
+            <div v-for="(work,index) in items" v-bind:key="'work'" class="form">
+                <el-form-item  v-for="key in keys" v-bind:key="key" v-bind:label="labels[key] || key">
+                    <el-input v-model="work[key]"></el-input>
                 </el-form-item>
                 <div class="action">
                     <el-button type="primary" v-on:click="addworkExperience">增加</el-button>
@@ -20,23 +17,27 @@
 
 <script>
 export default {
+    props:['items','labels','title',],
+    computed:{
+        keys(){
+            return Object.keys(this.items[0])
+        }
+    },
     data(){
         return {
             labelPosition: 'top',
-            workExperience:[
-            {conmpany:'',content: ''}
-            ]
         }
     },
     methods:{
         addworkExperience(){
-            this.workExperience.push({
-                conmpany: '',
-                content:''
+            const empty = {}
+            this.keys.map((key)=>{
+                empty[key] = ''
             })
+            this.items.push(empty)
         },
         removeworkExperience(index){
-            this.workExperience.splice(index,1)
+            this.items.splice(index,1)
         }
     }
 }
