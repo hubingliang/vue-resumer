@@ -16,12 +16,15 @@ body #app main .editor {
   width: 34em;
   margin-right: 20px;
   border-radius: 4px;
-  overflow: hidden;
+  overflow: auto;
   display: flex;
+  position: relative;
 }
 body #app main .editor nav {
+  position: fixed;
   background: #333;
   width: 80px;
+  height: 593.6px;
 }
 body #app main .editor nav .icon {
   width: 30px;
@@ -36,10 +39,22 @@ body #app main .editor nav .active .icon {
   fill: black;
 }
 body #app main .editor .panes {
+  padding-left: 80px;
   flex: 1;
 }
 body #app main .editor .panes li {
   display: none;
+  padding: 20px;
+}
+body #app main .editor .panes li form {
+  padding: 20px 0;
+}
+body #app main .editor .panes li form .form {
+  padding: 20px 0;
+}
+body #app main .editor .panes li form .form .action {
+  display: flex;
+  justify-content: space-between;
 }
 body #app main .editor .panes .active {
   display: block;
