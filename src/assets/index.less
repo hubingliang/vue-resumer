@@ -1,18 +1,23 @@
 body{
-    #app{
+    .app{
         display: flex;
         flex-direction: column;
         height: 100vh;
         .topbar {
             box-shadow: 0 0 3px hsla(0,0,0,0.5);
+            background: #333;
+            .logo{
+                color: white;
+            }
         }
         main{
             display: flex;
             flex: 1;
             padding: 20px;
+            justify-content: center;
             .editor{
                 box-shadow: 0 0 3px hsla(0,0,0,0.5);
-                width: 34em;
+                width: 40em;
                 margin-right: 20px;
                 border-radius: 4px;
                 overflow: auto;
@@ -49,6 +54,9 @@ body{
                                 .action{
                                     display: flex;
                                     justify-content: space-between;
+                                    i{
+                                        margin-top: 9.4px;
+                                    }
                                 }  
                             }
                         }
@@ -62,13 +70,35 @@ body{
             .preview{
                 border-radius: 4px;
                 box-shadow: 0 0 3px hsla(0,0,0,0.5);
-                flex: 1;
                 overflow: hidden;
                 padding: 20px;
+                width: 900px;
+                position: relative;
                 hr{
                     margin: 20px 0;
                 }
+                .exitpreview{
+                    position: absolute;
+                    right: 20px;
+                    bottom: 20px;
+                    display: none;
+                }
             }
+        }
+    }
+}
+
+.previewMode {
+    #topbar{
+        display: none;
+    }
+    #editor{
+        display: none;
+    }
+    #preview{
+        width: 595px;
+        .exitpreview{
+            display: block;
         }
     }
 }

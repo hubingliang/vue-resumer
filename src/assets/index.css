@@ -1,71 +1,98 @@
-body #app {
+body .app {
   display: flex;
   flex-direction: column;
   height: 100vh;
 }
-body #app .topbar {
+body .app .topbar {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+  background: #333;
 }
-body #app main {
+body .app .topbar .logo {
+  color: white;
+}
+body .app main {
   display: flex;
   flex: 1;
   padding: 20px;
+  justify-content: center;
 }
-body #app main .editor {
+body .app main .editor {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  width: 34em;
+  width: 40em;
   margin-right: 20px;
   border-radius: 4px;
   overflow: auto;
   display: flex;
   position: relative;
 }
-body #app main .editor nav {
+body .app main .editor nav {
   position: fixed;
   background: #333;
   width: 80px;
   height: 593.6px;
 }
-body #app main .editor nav .icon {
+body .app main .editor nav .icon {
   width: 30px;
   height: 30px;
   margin: 20px;
   fill: white;
 }
-body #app main .editor nav .active {
+body .app main .editor nav .active {
   background: white;
 }
-body #app main .editor nav .active .icon {
+body .app main .editor nav .active .icon {
   fill: black;
 }
-body #app main .editor .panes {
+body .app main .editor .panes {
   padding-left: 80px;
   flex: 1;
 }
-body #app main .editor .panes li {
+body .app main .editor .panes li {
   display: none;
   padding: 20px;
 }
-body #app main .editor .panes li form {
+body .app main .editor .panes li form {
   padding: 20px 0;
 }
-body #app main .editor .panes li form .form {
+body .app main .editor .panes li form .form {
   padding: 20px 0;
 }
-body #app main .editor .panes li form .form .action {
+body .app main .editor .panes li form .form .action {
   display: flex;
   justify-content: space-between;
 }
-body #app main .editor .panes .active {
+body .app main .editor .panes li form .form .action i {
+  margin-top: 9.4px;
+}
+body .app main .editor .panes .active {
   display: block;
 }
-body #app main .preview {
+body .app main .preview {
   border-radius: 4px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  flex: 1;
   overflow: hidden;
   padding: 20px;
+  width: 900px;
+  position: relative;
 }
-body #app main .preview hr {
+body .app main .preview hr {
   margin: 20px 0;
+}
+body .app main .preview .exitpreview {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: none;
+}
+.previewMode #topbar {
+  display: none;
+}
+.previewMode #editor {
+  display: none;
+}
+.previewMode #preview {
+  width: 595px;
+}
+.previewMode #preview .exitpreview {
+  display: block;
 }

@@ -1,11 +1,11 @@
 <template>
     <div id="topbar">
       <div class="logo">
-          VueResumer
+          Vue Resumer
       </div>
       <div class="actions">
         <el-button>登录</el-button>
-        <el-button type="primary">注册</el-button>
+        <el-button >注册</el-button>
       </div>
     </div>
 </template>
@@ -19,7 +19,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 40px;
   font-size: 20px;
 }
 </style>
+
+<script>
+  export default {
+    methods:{
+      preview(){
+        this.$emit('preview') 
+      }
+    }
+  }
+</script>
+
