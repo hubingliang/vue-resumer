@@ -6,6 +6,7 @@
       <div class="actions">
         <el-button>登录</el-button>
         <el-button >注册</el-button>
+        <el-button v-on:click="preview" class="preview">预览</el-button>
       </div>
     </div>
 </template>

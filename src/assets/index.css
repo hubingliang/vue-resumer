@@ -87,12 +87,16 @@ body .app main .preview .exitpreview {
 .previewMode #topbar {
   display: none;
 }
-.previewMode #editor {
+.previewMode main {
+  background: #333;
+}
+.previewMode main #editor {
   display: none;
 }
-.previewMode #preview {
+.previewMode main #preview {
   width: 595px;
+  background: white;
 }
-.previewMode #preview .exitpreview {
+.previewMode main #preview .exitpreview {
   display: block;
 }
