@@ -70,18 +70,39 @@ body .app main .editor .panes .active {
 body .app main .preview {
   border-radius: 4px;
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
-  overflow: hidden;
+  overflow: auto;
   padding: 20px;
   width: 900px;
   position: relative;
+}
+body .app main .preview .name {
+  padding-bottom: 10px;
+}
+body .app main .preview section {
+  display: flex;
+  flex-direction: row-reverse;
+}
+body .app main .preview section li {
+  width: 725px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+body .app main .preview section li p {
+  width: 400px;
+}
+body .app main .preview .contacts {
+  flex-direction: row;
+}
+body .app main .preview .contacts li {
+  width: 300px;
+  display: block;
 }
 body .app main .preview hr {
   margin: 20px 0;
 }
 body .app main .preview .exitpreview {
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
+  margin-left: 480px;
   display: none;
 }
 .previewMode #topbar {
@@ -96,6 +117,13 @@ body .app main .preview .exitpreview {
 .previewMode main #preview {
   width: 595px;
   background: white;
+}
+.previewMode main #preview section li {
+  width: 490px;
+  padding-right: 0;
+}
+.previewMode main #preview .contacts li {
+  width: 250px;
 }
 .previewMode main #preview .exitpreview {
   display: block;

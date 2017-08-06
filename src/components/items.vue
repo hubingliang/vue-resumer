@@ -7,7 +7,7 @@
                     <el-input v-model="work[key]"></el-input>
                 </el-form-item>
                 <div class="action">
-                    <el-button type="primary" v-on:click="addworkExperience">增加</el-button>
+                    <el-button type="primary" v-on:click="addworkExperience">添加</el-button>
                     <i class="el-icon-delete" v-on:click="removeworkExperience(index)"></i>
                 </div>
             </div>

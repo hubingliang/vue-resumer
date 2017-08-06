@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import Hello from './components/Hello'
 import Topbar from './components/Topbar'
 import Editor from './components/Editor'
 import Preview from './components/Preview'
@@ -18,7 +17,7 @@ export default {
     return {
       previewMode : false,
       resume:{
-          profile:{
+        profile:{
           name:　'',
           city:'',
           birth: '',
@@ -35,9 +34,9 @@ export default {
         Awards:[
           {name:''}
         ],
-        contacts:[
+        contacts:
           {qq:'',wechat:'',email:'',phone:''}
-        ]
+        
       },
     }
   },

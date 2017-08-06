@@ -1,71 +1,70 @@
 <template>
     <div id="preview">
-        <el-upload
-        class="avatar-uploader"
-        action="https://jsonplaceholder.typicode.com/posts/"
-        :show-file-list="false"
-        :on-success="handleAvatarSuccess"
-        :before-upload="beforeAvatarUpload">
-            <img v-if="imageUrl" :src="imageUrl" class="avatar">
-            <i v-else class="el-icon-plus avatar-uploader-icon"></i>
-        </el-upload>
         <h1 class="name">{{resume.profile.name}}</h1>
         <p>{{resume.profile.city}} | {{resume.profile.birth}}</p>
         <hr>
-        <section v-if="filter(resume.Projectexperience).length>0">
-            <h2>项目经历</h2>
-            <ul>
-                <li v-for="Projectexperience in filter(resume.Projectexperience)">
-                    {{Projectexperience.name}}
-                    {{Projectexperience.content}}
-                </li>
-            </ul>
-        </section>
-        <section v-if="filter(resume.Learningexperience).length>0">
-            <h2>学习经历</h2>
-            <ul>
-                <li v-for="Learningexperience in filter(resume.Learningexperience)">
-                    
-                    {{Learningexperience.school}}
-                    {{Learningexperience.time}}
-                    {{Learningexperience.degree}}
-                </li>
-            </ul>
-        </section>
-        <section v-if="filter(resume.workExperience).length>0">
-            <h2>工作经历</h2>
+        <h2>工作经历</h2>
+        <section v-if="filter(resume.workExperience).length>0" class="workExperience">
             <ul>
                 <li v-for="workExperience in filter(resume.workExperience)">
-                    {{workExperience.conmpany}}
-                    {{workExperience.content}}
+                    <h3>{{workExperience.conmpany}}</h3>
+                    <p>{{workExperience.content}}</p>
                 </li>
             </ul>
         </section>
-        <section>
-            <h2>联系方式</h2>
+        <hr>
+        <h2>学习经历</h2>
+        <section v-if="filter(resume.Learningexperience).length>0" class="Learningexperience">
             <ul>
-                <li>            
-                   {{resume.contacts.qq}}
-                </li>
-                <li>            
-                   {{resume.contacts.wechat}}
-                </li>
-                <li>            
-                   {{resume.contacts.email}}
-                </li>
-                <li>            
-                   {{resume.contacts.phone}}
+                <li v-for="Learningexperience in filter(resume.Learningexperience)">
+                    <div class="school">
+                        <h3>{{Learningexperience.school}}</h3>
+                        <span>{{Learningexperience.time}}</span>
+                    </div>
+                    <p>{{Learningexperience.degree}}</p>
                 </li>
             </ul>
         </section>
+        <hr>
+        <h2>项目经历</h2>
+        <section v-if="filter(resume.Projectexperience).length>0">
+            <ul>
+                <li v-for="Projectexperience in filter(resume.Projectexperience)">
+                    <h3>{{Projectexperience.name}}</h3>
+                    <p>{{Projectexperience.content}}</p>
+                </li>
+            </ul>
+        </section>
+        <hr>
+        <h2>奖项</h2>
         <section v-if="filter(resume.Awards).length>0">
-            <h2>奖项</h2>
             <ul>
                 <li v-for="Awards in filter(resume.Awards)">            
-                    {{Awards.name}}
+                    <p>{{Awards.name}}</p>
                 </li>
             </ul>
         </section>
+        <hr>
+        <h2>联系方式</h2>
+        <section class="contacts">
+            <ul>
+                <li>            
+                   QQ：{{resume.contacts.qq}}
+                </li>
+                <li>            
+                   微信：{{resume.contacts.wechat}}
+                </li>
+            </ul>
+            <ul>
+                <li>            
+                   邮箱：{{resume.contacts.email}}
+                </li>
+                <li>            
+                   电话：{{resume.contacts.phone}}
+                </li>
+            </ul>
+        </section>
+        <hr>
         <el-button v-on:click="exitpreview" class="exitpreview"type="primary">退出预览</el-button>
     </div>
 </template>
@@ -74,11 +73,6 @@
 <script>
     export default {
         props: ['resume'],
-        data() {
-            return {
-                imageUrl: ''
-            };
-        },
         methods: {
             filter(array) {
                 return array.filter(item => !this.isempty(item))

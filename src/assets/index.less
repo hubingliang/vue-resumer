@@ -70,17 +70,38 @@ body{
             .preview{
                 border-radius: 4px;
                 box-shadow: 0 0 3px hsla(0,0,0,0.5);
-                overflow: hidden;
+                overflow: auto;
                 padding: 20px;
                 width: 900px;
                 position: relative;
+                .name{
+                    padding-bottom: 10px;
+                }
+                section{
+                    display: flex;
+                    flex-direction: row-reverse;
+                    li{
+                        width: 725px;
+                        display: flex;
+                        justify-content: space-around;
+                        padding: 20px;
+                        p{
+                            width: 400px;
+                        }
+                    }
+                }
+                .contacts{
+                    flex-direction: row;
+                    li{
+                        width: 300px;
+                        display: block;
+                    }
+                }
                 hr{
                     margin: 20px 0;
                 }
                 .exitpreview{
-                    position: absolute;
-                    right: 20px;
-                    bottom: 20px;
+                    margin-left: 480px;
                     display: none;
                 }
             }
@@ -100,6 +121,17 @@ body{
         #preview{
             width: 595px;
             background: white;
+            section{
+                li{
+                    width: 490px;
+                    padding-right: 0;
+                }
+            }
+            .contacts{
+                li{
+                    width: 250px;
+                }
+            }
             .exitpreview{
                 display: block;
             }
